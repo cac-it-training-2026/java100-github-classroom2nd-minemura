@@ -29,5 +29,7 @@
 package lesson01.challenge04;
 
 public class Patisserie {
+	public static void main(String[] args) {
 
+	}
 }
