@@ -35,26 +35,37 @@ import java.io.InputStreamReader;
 
 public class Patisserie {
 	public static void main(String[] args) throws IOException {
-		BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
-		System.out.println("それぞれ何個ずつ買いますか？（最大30個まで）");
-		System.out.println("\nシトロン    >");
-		String citronstr = read.readLine();
-		int citron = Integer.parseInt(citronstr);
 
-		System.out.println("ショコラ    >");
-		String chocolatestr = read.readLine();
-		int chocolate = Integer.parseInt(chocolatestr);
+		System.out.println("たいへんお待たせしました。");
+		System.out.println("【ポエール・ネルメ】");
+		System.out.println("ただいまより開店です！！");
 
-		System.out.println("ピスターシュ    >");
-		String pistachestr = read.readLine();
-		int pistache = Integer.parseInt(pistachestr);
+		int citron = 30;
+		int chocolate = 30;
+		int pistache = 30;
 
-		System.out.println("シトロン   " + citronstr + "個");
-		System.out.println("ショコラ   " + chocolatestr + "個");
-		System.out.println("ピスターシュ   " + pistachestr);
+		System.out.println("\n本日のおすすめ商品です。\n");
+		System.out.println("シトロン　　\\250・・・残り" + citron + "個");
+		System.out.println("ショコラ　　\\280・・・残り" + chocolate + "個");
+		System.out.println("ピスターシュ　　\\320・・・残り" + pistache + "個");
 
-		int sum = citron + chocolate + pistache;
-		int sumprice = 250 * citron + 280 * chocolate + 320 * pistache;
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+		System.out.println("\nそれぞれ何個ずつ買いますか？（最大30個まで）\n");
+		System.out.print("シトロン      >");
+		String citronBuyCountStr = br.readLine();
+		int citronBuyCount = Integer.parseInt(citronBuyCountStr);
+
+		System.out.print("ショコラ      >");
+		String chocolatBuyCountStr = br.readLine();
+		int chocolatBuyCount = Integer.parseInt(chocolatBuyCountStr);
+
+		System.out.print("ピスターシュ  >");
+		String pistacheBuyCountStr = br.readLine();
+		int pistacheBuyCount = Integer.parseInt(pistacheBuyCountStr);
+
+		int sum = citronBuyCount + chocolatBuyCount + pistacheBuyCount;
+		int sumprice = 250 * citronBuyCount + 280 * chocolatBuyCount + 320 * pistacheBuyCount;
 
 		System.out.println("\n合計個数    " + sum + "個");
 		System.out.println("合計金額    " + sumprice + "円");
