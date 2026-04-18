@@ -24,7 +24,6 @@ public class Advertisement {
 		System.out.println("　　　　　　　　応募はお電話またはＷＥＢから！");
 		System.out.println("                    TEL: 00-0000-0000");
 		System.out.println("--------------------------------------------------------------------");
-
 	}
 
 }
