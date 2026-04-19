@@ -36,6 +36,66 @@
 
 package lesson01.challenge08;
 
-public class Patisserie {
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
+public class Patisserie {
+	public static void main(String[] args) throws IOException {
+
+		System.out.println("たいへんお待たせしました。");
+		System.out.println("【ポエール・ネルメ】");
+		System.out.println("ただいまより開店です！！");
+
+		int citron = 30;
+		int chocolate = 30;
+		int pistache = 30;
+
+		System.out.println("\n本日のおすすめ商品です。\n");
+		System.out.println("シトロン　　\\250・・・残り" + citron + "個");
+		System.out.println("ショコラ　　\\280・・・残り" + chocolate + "個");
+		System.out.println("ピスターシュ　　\\320・・・残り" + pistache + "個");
+
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+		System.out.println("\nそれぞれ何個ずつ買いますか？（最大30個まで）\n");
+		System.out.print("シトロン      >");
+		String citronBuyCountStr = br.readLine();
+		double citronBuyCount = Double.parseDouble(citronBuyCountStr);
+
+		System.out.print("ショコラ      >");
+		String chocolatBuyCountStr = br.readLine();
+		double chocolatBuyCount = Double.parseDouble(chocolatBuyCountStr);
+
+		System.out.print("ピスターシュ  >");
+		String pistacheBuyCountStr = br.readLine();
+		double pistacheBuyCount = Double.parseDouble(pistacheBuyCountStr);
+
+		double sum = citronBuyCount + chocolatBuyCount + pistacheBuyCount;
+		int sumprice = (int) (250 * citronBuyCount + 280 * chocolatBuyCount + 320 * pistacheBuyCount);
+
+		System.out.println("\n合計個数    " + sum + "個");
+		System.out.println("合計金額    " + sumprice + "円");
+		System.out.println("をお買い上げですね。");
+		System.out.println("承りました。");
+
+		citron = (int) (citron - citronBuyCount);
+		chocolate = (int) (chocolate - chocolatBuyCount);
+		pistache = (int) (pistache - pistacheBuyCount);
+
+		System.out.println("\n本日のおすすめ商品です。\n");
+		System.out.println("シトロン      \\250・・・残り" + citron + "個");
+		System.out.println("ショコラ      \\280・・・残り" + chocolate + "個");
+		System.out.println("ピスターシュ  \\320・・・残り" + pistache + "個");
+
+		System.out.println("\n閉店時間となりました。");
+		System.out.println("またのお越しをお待ちしております。");
+
+		System.out.println("\n売上の割合");
+		System.out.println("売上合計\\" + sumprice);
+		System.out.println("\n内訳");
+		System.out.println("シトロン      \\" + (int) (250 * citronBuyCount) + "・・・" + (int) ((250 * citronBuyCount) / sumprice * 100 )+ "%");
+		System.out.println("ショコラ      \\" + (int) (280 * chocolatBuyCount) + "・・・"+ (int) ((280 * chocolatBuyCount) / sumprice * 100) + "%");
+		System.out.println("ピスターシュ  \\" + (int) (320 * pistacheBuyCount) + "・・・"+ (int) ((320 * pistacheBuyCount) / sumprice * 100) + "%");
+	}
 }
