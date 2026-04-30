@@ -1,6 +1,6 @@
 package lesson09.challenge04.Nurserry.logic;
 
-import lesson09.challenge04.CriticalConditionException;
+import lesson09.challenge04.Nurserry.CriticalConditionException;
 
 public class Nurse {
 	private String name;
